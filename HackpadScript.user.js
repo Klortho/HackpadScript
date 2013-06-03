@@ -16,8 +16,6 @@
 // the guts of this userscript
 (function main() {
 
-    console.info("Hey there!" + document.location);
-
     var loc = document.location;
     var hash = loc.toString().match('[a-zA-Z0-9]{11,11}$');
     if (!hash) return;
@@ -26,10 +24,6 @@
     var tocDiv = document.getElementById('toc-div');
     if (!sidebarDiv || !tocDiv) return;
     var tocNext = tocDiv.nextElementSibling;
-    console.info('loc = ' + loc + "\n" +
-                 'hash = ' + hash + "\n" +
-                 'tocDiv = ' + tocDiv + "\n" +
-                 'tocNext = ' + tocNext);
 
     var linksDiv = document.createElement('div');
     linksDiv.setAttribute('id', 'links-div');
